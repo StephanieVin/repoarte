@@ -71,13 +71,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Add author</h5>
+          <h5 class="modal-title">Agregar</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form wire:submit.prevent='addAuthor()' method="post">
              <div class="mb-3">
-                <label class="form-label">Name</label>
+                <label class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="example-text-input" placeholder="Enter author name" wire:model='name'>
                 <span class="text-danger">@error('name'){{ $message }} @enderror</span>
               </div>
@@ -89,16 +89,16 @@
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Username</label>
+                <label class="form-label">Nombre de usuario</label>
                 <input type="text" class="form-control" name="example-text-input" placeholder="Enter author username" wire:model='username'>
                 <span class="text-danger">@error('username'){{ $message }} @enderror</span>
               </div>
 
               <div class="form-group mb-3 ">
-                <label class="form-label">Author Type</label>
+                <label class="form-label">Tipo</label>
                 <div>
                   <select class="form-select" wire:model='author_type'>
-                    <option value="">-- No selected ---</option>
+                    <option value="">-- No seleccionado --</option>
                     @foreach(\App\Models\Type::all() as $type)
                         <option value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach
@@ -108,7 +108,7 @@
               </div>
 
               <div class="mb-3">
-                <div class="form-label">Is direct publisher?</div>
+                <div class="form-label">¿Puede publicar artículos?</div>
                 <div>
                   <label class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="direct_publisher" value="0" wire:model='direct_publisher'>
@@ -123,8 +123,8 @@
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
               </div>
 
           </form>
@@ -141,14 +141,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit author</h5>
+          <h5 class="modal-title">Editar</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form wire:submit.prevent='updateAuthor()' method="post">
             <input type="hidden" wire:model='selected_author_id'>
              <div class="mb-3">
-                <label class="form-label">Name</label>
+                <label class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="example-text-input" placeholder="Enter author name" wire:model='name'>
                 <span class="text-danger">@error('name'){{ $message }} @enderror</span>
               </div>
@@ -160,13 +160,13 @@
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Username</label>
+                <label class="form-label">Nombre de Usuario</label>
                 <input type="text" class="form-control" name="example-text-input" placeholder="Enter author username" wire:model='username'>
                 <span class="text-danger">@error('username'){{ $message }} @enderror</span>
               </div>
 
               <div class="form-group mb-3 ">
-                <label class="form-label">Author Type</label>
+                <label class="form-label">Tipo</label>
                 <div>
                   <select class="form-select" wire:model='author_type'>
                     @foreach(\App\Models\Type::all() as $type)
@@ -178,7 +178,7 @@
               </div>
 
               <div class="mb-3">
-                <div class="form-label">Is direct publisher?</div>
+                <div class="form-label">¿Puede Publicar Artículos?</div>
                 <div>
                   <label class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="direct_publisher" value="0" wire:model='direct_publisher'>
@@ -193,7 +193,7 @@
               </div>
 
               <div class="mb-3">
-                <div class="form-label">Blocked</div>
+                <div class="form-label">Bloqueo</div>
                 <label class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" checked="" wire:model='blocked'>
                   <span class="form-check-label"></span>
@@ -202,8 +202,8 @@
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
               </div>
 
           </form>
